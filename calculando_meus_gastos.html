@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Lógica-JS-HTML-CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='calculando_meus_gastos.css'> CSS-->
+  </head>
+
+  <body>
+    <h2>Lógica de Programação com JS + HTML + CSS</h2>
+    <p>Este site calcula a média/gastos de uma pessoa !</p>
+    <!---->
+    <script src="/funcoes.js"></script>
+    <script>
+      /*
+      function pula_linha() {
+        document.write("<br><br>");
+      }
+
+      function mostra(frase) {
+        document.write(frase);
+      }
+
+      function BRL(valor) {
+        valor = valor.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+        return valor;
+      }*/
+      /// S/ BRL
+      var v_pq_ecologico = 800.9;
+      var v_ct_tecnologia = 850.98;
+      var v_museu = 500.95;
+      var v_mata_fechada = 1200.8;
+      var soma_gastos =
+        v_pq_ecologico + v_ct_tecnologia + v_museu + v_mata_fechada;
+      var media_gastos = (soma_gastos / 4).toFixed(2); // duas casas após a vírgula
+      /// C/ BRL
+      var v_pq_ecologico_brl = BRL(v_pq_ecologico);
+      var v_ct_tecnologia_brl = BRL(v_ct_tecnologia);
+      var v_museu_brl = BRL(v_museu);
+      var v_mata_fechada_brl = BRL(v_mata_fechada);
+      var soma_gastos_brl = BRL(soma_gastos);
+      var media_gastos_brl = BRL(media_gastos);
+
+      mostra("<h3> Calculando a média dos gastos de 4 viagens</h3>");
+      mostra(
+        "A primeira viagem foi para um parque ecológico e o gasto total foi de : " +
+          v_pq_ecologico_brl +
+          " reais"
+      );
+      pula_linha();
+      mostra(
+        "A segunda  viagem foi para centro de tecnologia e o gasto total foi de : " +
+          v_ct_tecnologia_brl +
+          " reais"
+      );
+      pula_linha();
+      mostra(
+        "A terceira viagem foi para um museu e o gasto total foi de : " +
+          v_museu_brl +
+          " reais"
+      );
+      pula_linha();
+      mostra(
+        "A quarta   viagem foi para uma trilha de mata fechada e o gasto total foi de R$ " +
+          v_mata_fechada_brl +
+          " reais"
+      );
+      pula_linha();
+      mostra("Valor total das viagens: " + soma_gastos_brl + " reais");
+      pula_linha();
+      mostra(
+        "A média dos gastos das quatros viagens foi de: " +
+          media_gastos_brl +
+          " reais"
+      );
+      pula_linha();
+
+      mostra("<hr>");
+
+      var valor_passagem = 4.5;
+      var qtd_onibus_dia = 2;
+      var qtd_dias = 5;
+      var mes_dias = 30;
+      var qtd_semana_mes = 4;
+
+      var gasto_diario = valor_passagem * qtd_onibus_dia;
+      var gasto_semanal = gasto_diario * qtd_dias;
+      var gasto_mensal = (gasto_semanal * qtd_semana_mes).toFixed(2);
+      var gasto_anual = gasto_mensal * 12;
+
+      mostra("<h3> Calculando os gastos anuais com vale transporte</h3>");
+      mostra("Valor da passagem :" + valor_passagem);
+      pula_linha();
+      mostra(
+        "Quantos ônibus você pega diariamente ? " + qtd_onibus_dia + " ônibus"
+      );
+      pula_linha();
+      mostra(
+        "Durante quantos dias por semana,você ultitliza o transporte público ? " +
+          qtd_dias +
+          " Dias"
+      );
+      pula_linha();
+      mostra(
+        "..... Calculando Resultados....... <br> Gasto mensal: R$ " +
+          gasto_mensal +
+          " reais"
+      );
+      pula_linha();
+      mostra("Gasto anual: R$ " + gasto_anual + " reais");
+    </script>
+  </body>
+</html>

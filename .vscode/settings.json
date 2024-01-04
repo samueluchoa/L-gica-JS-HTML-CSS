@@ -1,0 +1,7 @@
+{
+    "vscord.app.privacyMode.enable": true,
+    "vscord.app.whitelistEnabled": true,
+    "vscord.app.whitelistIsBlacklist": false,
+    "vscord.behaviour.debug": true,
+    "vscord.app.name": "Visual Studio Code"
+}
