@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+    var pulaLinha = function() {
+        document.write("<br>" + "<hr>" + "<br>");
+    };
+
+    var mostra = function(frase) {
+        document.write("<big>" + frase + "</big>");
+        pulaLinha();
+    };
+
+    var ano = 2003;
+    var idadePaulo = 30;
+    var idadeJunior = 22;
+    var minhaIdade = 20;
+
+    mostra("Paulo nasceu em " + (ano - idadePaulo));
+    mostra("Junior nasceu em " + (ano - idadeJunior));
+    mostra("Eu nasci em " + (ano - minhaIdade));
+    var mediaIdades = (idadePaulo + idadeJunior + minhaIdade)/3;
+    mediaIdades = mediaIdades.toFixed(2);
+    mostra("A média das idades é " + mediaIdades);
+</script>

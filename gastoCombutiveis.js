@@ -8,7 +8,11 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-// !---
+// !--- Função que pula linha. Criei para usar no console - Tela Preta.
+function pulaLinha() {
+  console.log("\n");
+}
+// !-------
 var precoDaGasolina = 2.9;
 var precoDoAlcool = 2.4;
 var tanque = 40;
@@ -19,25 +23,22 @@ rl.question(
   "Você está usando qual combústivel ? (1) Gasolina (2) Álcool: ",
   (opcao) => {
     if (opcao == 1) {
+      pulaLinha();
       precoPorKilometro = (precoDaGasolina * tanque) / kmRodado;
-      console.log(); // ? Pula linha
       console.log(
         "O preço da gasolina por kilometro rodado é " +
           precoPorKilometro +
           " R$/Km"
       );
-      console.log(); // ? Pula linha
     } else {
-      console.log(); // ? Pula linha
       precoPorKilometro = (precoDoAlcool * tanque) / kmRodado;
       console.log(
         "O preço do álcool por kilometro rodado é " +
           precoPorKilometro +
           " R$/Km"
-      );
-      console.log(); // ? Pula linha
+      ); 
     }
-
+    pulaLinha();
     rl.close();
   }
 );
