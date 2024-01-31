@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<!--! COMENTÁRIOS-->
+<!-- TODO a função parseInt recebe uma string e retorna essa string com o tipo número -->
+<!-- ? a função prompt retorna um texto -->
+<script>
+    var pulaLinha = function () {
+        document.write("<br>");
+    };
+
+    var mostra = function (frase) {
+        document.write(frase);
+        pulaLinha();
+    };
+
+    var calculaPontos = function(vitorias, empates, derrotas) {
+        var pontos = (vitorias * 3) + parseInt(empates) - parseInt(derrotas);
+        return pontos;
+    };
+ 
+    var vitorias = prompt("Quantos jogos o CDC Futebol Clube venceu?");
+    var empates = prompt("Quantos jogos o CDC Futebol Clube empatou?");
+    var derrotas = prompt("Quantos jogos o CDC Futebol Clube perdeu?");
+    var pontos = calculaPontos(vitorias, empates, derrotas);
+    mostra("O time CDC FC tem " + pontos + " pontos!");
+    
+    var vitoriasAdversario = prompt("Quantos jogos o Livros Velhos FC venceu?");
+    var empatesAdversario = prompt("Quantos jogos o Livros Velhos FC empatou?");
+    var derrotasAdversario = prompt("Quantos jogos o o Livros Velhos FC perdeu?");
+    var pontosAdversario = calculaPontos(vitoriasAdversario, empatesAdversario, derrotasAdversario);
+    mostra("O time Livros Velhos FC tem " + pontosAdversario + " pontos!");
+    
+    if (pontos > pontosAdversario) {
+        mostra("O time CDC FC está indo MELHOR que os Livros Velhos FC !");
+    }
+    if (pontos < pontosAdversario) {
+        mostra("O time CDC FC está indo PIOR que os Livros Velhos FC !");    
+    }
+    if(pontos == pontosAdversario) {
+        mostra("Os times estão EMPATADO !");
+    }
+</script>

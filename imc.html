@@ -1,0 +1,32 @@
+<meta charset="utf-8" />
+
+<script>
+  function pula_linha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pula_linha();
+  }
+
+  function calculaIMC(peso, altura) {
+    var imc = peso / (altura * altura);
+    imc = imc.toFixed(2);
+    return imc;
+  }
+  <!-- TODO Apresentação do programa - Calcula IMC -->
+  mostra("A sigla IMC significa Indice de Massa Corporal");
+  mostra(" O cálculo consiste em dividir o peso pela altura ao quadrado");
+  mostra("Deependendo do valor, você saberá se está saudável ou não");
+
+  var nome = prompt("Digite seu nome:       ");
+  var peso = prompt("Digite seu peso:       ");
+  var altura = prompt("Digite sua altura:   ");
+  var imc = calculaIMC(peso, altura);
+
+  pula_linha();
+  mostra("Calculando..........");
+  mostra("Exibindo resultado......");
+  mostra("<strong>" + nome + " seu IMC é " + imc + "</strong>");
+</script>

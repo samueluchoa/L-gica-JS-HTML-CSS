@@ -4,6 +4,7 @@ function pula_linha() {
 
 function mostra(frase) {
   document.write(frase);
+  pula_linha();
 }
 
 function BRL(valor) {

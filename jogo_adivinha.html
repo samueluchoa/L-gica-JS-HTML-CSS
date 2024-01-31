@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+        function sorteia(limite) {
+            var numeroPensadoComCasasDecimais = Math.random() * limite;
+            var numeroPensado = Math.round(numeroPensadoComCasasDecimais);
+            return numeroPensado;    
+        }
+        function eTexto(chute) {
+            var chute = isNaN(chute); 
+            if(chute) {
+                mostra("apenas números são válidos! Tente Novamente !");     
+             } else {
+                return parseInt(chute);
+             }
+        }
+        var numeroPensado = sorteia(10);
+        console.log(numeroPensado); 
+        
+        var chute = prompt("Computador: Eu estou pensando em qual Número ??? ....");
+            chute = eTexto(chute);
+
+        if (chute == numeroPensado) {
+            mostra("Você acertou! O número pensado foi " + numeroPensado);
+        } else {
+            mostra("Você Errou! O número pensado foi " + numeroPensado);
+        }
+    </script>
+</body>
+</html>
