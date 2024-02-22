@@ -2,24 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>Jogo da Adivinhação</title>
 </head>
+<!--? Escrever o HTML Aqui-->
 <body>
     <script>
-        function pulaLinha() {
-            document.write("<br>");
-        }
-        function mostra(frase) {
-            document.write(frase);
-            pulaLinha();
-        }
-        function sorteia(limite) {
+        var mostra = function(frase) {
+            document.write(frase + "<br>");
+        };
+        
+        var sorteia = function(limite) {
             var numeroPensadoComCasasDecimais = Math.random() * limite;
             var numeroPensado = Math.round(numeroPensadoComCasasDecimais);
             return numeroPensado;    
-        }
-        function eTexto(chute) {
+        };
+        /*
+        var sejaNumero = function (chute) {
             var chute = isNaN(chute); 
             if(chute) {
                 mostra("apenas números são válidos! Tente Novamente !");     
@@ -27,17 +26,37 @@
                 return parseInt(chute);
              }
         }
-        var numeroPensado = sorteia(10);
-        console.log(numeroPensado); 
+        */
+        <!--TODO Incio do Programa-->
+        var limite = 10;
+        var numeroPensado = sorteia(limite); 
+        alert(numeroPensado);
+        alert("Eu pensei em um número. Qual é o número? ");
         
-        var chute = prompt("Computador: Eu estou pensando em qual Número ??? ....");
-            chute = eTexto(chute);
+        var acertou = 0;
+        // tentar fazer uma função com isso aqui !
+        for(var tentativa = 1; tentativa <= 3; tentativa++) {
 
-        if (chute == numeroPensado) {
-            mostra("Você acertou! O número pensado foi " + numeroPensado);
-        } else {
-            mostra("Você Errou! O número pensado foi " + numeroPensado);
+            var chute = parseInt(prompt(tentativa + "° Tentativa" +" Chute !  "));
+            //
+            if(chute == numeroPensado) {
+                acertou = 1;
+                break;
+            } 
+            else { 
+                if (chute > numeroPensado) 
+                    alert("O número que você chutou é MAIOR que NÚMERO PENSADO, Tente Novamente!");    
+                else 
+                    alert("ERROU !!! Seu chute é MENOR do que o NÚMERO PENSADO! Tente Novamente!");    
+            }
         }
+        // Mensagem de fim de jogo ! Adicionar uma imagem de um troféu/medalha e uma imagem em caso de game over     
+        if (acertou == 0) {
+            mostra("Infelizmente, você perdeu :c" + "<br>" + "O número pensado foi " + numeroPensado);
+        } 
+        else {
+            mostra("Meus parabéns ! Você acertou! O numero pensado foi " + numeroPensado);                
+        } 
     </script>
 </body>
 </html>

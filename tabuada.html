@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+
+<script>
+    var mostra = function(frase) {
+        document.write(frase + "<br>");
+    };
+    var textoDireita = function(frase) {
+        document.write("<div style=text-align:center>" + frase + "</div>");
+    };
+
+    var tabuada = function(numero) {
+        mostra("---------------------------------------------------------------");
+        mostra("TABUADA do número " + numero);
+        mostra("---------------------------------------------------------------");
+        for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+            var produto = multiplicador * numero;
+            mostra(numero + " x " + multiplicador + " = " + produto);
+        }
+    };
+    var numero = prompt("Qual tabuada você deseja visualizar ?");
+    tabuada(numero);
+    textoDireita("USEI UMA FUNÇÃO PARA CENTRALIZAR ESSA FRASE!!");
+</script>

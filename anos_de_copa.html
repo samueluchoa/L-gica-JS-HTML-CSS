@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    var mostra = function (frase) {
+        document.write(frase + "<br>");
+    };
+
+    var anoComoTexto = prompt("Qual é o ano inicial que você deseja começar a contar o inicio das Copas ?");
+    var anoDeCopa = parseInt(anoComoTexto);
+    
+    var anoLimite = prompt("Qual é o ano limite que você deseja saber se há copa do mundo ?");
+    //var anoDeCopa = 1930;
+    while (anoDeCopa <= anoLimite) {
+        mostra("Teve Copa no ano de " + anoDeCopa);   
+        anoDeCopa += 4;
+    }
+</script> 

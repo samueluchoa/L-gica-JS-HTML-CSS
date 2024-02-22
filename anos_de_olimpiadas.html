@@ -1,0 +1,24 @@
+<meta charset="utf-8"/>
+
+<script>
+    var mostra = function(frase) {
+        document.write(frase + "<br>");
+    };
+    
+    <!--TODO A primeira olimpíada aconteceu em 1896-->    
+    var anoComoTexto = prompt("Qual é o ano inicial que você deseja começar a contar o inicio das Olimpíadas ?");
+    var anoDeOlimpiada = parseInt(anoComoTexto);
+    var anoLimite = prompt("Qual é o ano limite que você deseja saber se há Olimpíadas ?");
+    
+    while(anoDeOlimpiada <= anoLimite) {
+        if (anoDeOlimpiada == 1896) {
+            mostra("Em " + anoDeOlimpiada + " acorreu a 1° Olimpíada !");    
+            anoDeOlimpiada += 4;
+        }
+        else {
+            mostra(anoDeOlimpiada + " teve olimpíada !");
+            anoDeOlimpiada += 4;
+        }
+    }
+    mostra("Ufa! Esses foram os anos de olimpíadas até " + anoLimite);
+</script>
