@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    var mostra = function(frase) {
+        document.write(frase);
+    };
+    var pulaLinha = function() {
+        document.write("<br>");
+    };
+    var matrizQuadrada = function(linhas, colunas){
+        for(var contLinha = 1; contLinha <= linhas; contLinha++) {
+            for(var contColuna = 1; contColuna <= contLinha; contColuna++) {
+                mostra("*");
+            }
+            pulaLinha();
+        }
+    }
+    <!--TODO Escreva um quadrado 4 x 4-->
+    var numLinhas = 4;
+    var numColunas = numLinhas;
+    
+    mostra("Quadrado " + numLinhas+ "x" + numColunas + " - " + numLinhas +" linhas e " + numColunas + " colunas");
+    pulaLinha();
+    matrizQuadrada(numLinhas, numColunas);
+</script>
+
